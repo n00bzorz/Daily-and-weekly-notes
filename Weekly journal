@@ -1,0 +1,111 @@
+---
+title: Weekly Notes
+tags:
+- 
+---
+
+<center>
+<span style="text-align: center; font-family: ; font-size:; color: ">Weekly Journal for :</span>
+</center>
+
+---
+<center> [[<% tp.date. now ("gggg-[W]ww",-1,"{{title}}","gggg-[W]ww") %>]] | [[<% tp.date. now ("gggg-[W]ww",1,"{{title}}","gggg-[W]ww") %>]] </center>
+---
+
+```start-multi-column
+ID: ID_jkop
+Number of Columns: 3
+Largest Column: center
+```
+<br>
+<table style="width:100%">
+<TBODY style="text-align: center; vertical-align: middle">
+  <tr>
+    <th style="background-color:#3e3d3d" colspan=4><span style="font-family:default; font-size:default; color:default">THIS WEEKS SCHEDULE</span></th>
+  <tr>
+<td><span style=font-family:default;font-size:default;color:#4c5457><b>DOTW</b></span></td>
+<td><span style=font-family:default;font-size:default;color:default>Work START</span></td>
+<td><span style=font-family:default;font-size:default;color:default>Lunch</span></td>
+<td><span style=font-family:default;font-size:default;color:default>Work END</span></td>
+	 </tr>
+	 <tr>
+	 <td style="background-color:#1f262e">SUN</td>
+	 <td style="background-color:#4c5457">-</td>
+    <td style="background-color:#4c5457">-</td>
+    <td style="background-color:#4c5457">-</td>
+    </tr>
+    <tr>
+    <td style="background-color:#1f262e">MON</td>
+	 <td style="background-color:#204646">-</td>
+    <td style="background-color:#204646">-</td>
+    <td style="background-color:#204646">-</td>
+    </tr>
+    <tr>
+    <td style="background-color:#1f262e">TUE</td>
+	 <td style="background-color:#4c5457">-</td>
+    <td style="background-color:#4c5457">-</td>
+    <td style="background-color:#4c5457">-</td>
+    </tr>
+    <tr>
+    <td style="background-color:#1f262e">WED</td>
+	 <td style="background-color:#204646">-</td>
+    <td style="background-color:#204646">-</td>
+    <td style="background-color:#204646">-</td>
+    </tr>
+    <tr>
+    <td style="background-color:#1f262e">THU</td>
+	 <td style="background-color:#4c5457">-</td>
+    <td style="background-color:#4c5457">-</td>
+    <td style="background-color:#4c5457">-</td>
+    </tr>
+    <tr>
+    <td style="background-color:#1f262e">FRI</td>
+	 <td style="background-color:#204646">-</td>
+    <td style="background-color:#204646">-</td>
+    <td style="background-color:#204646">-</td>
+    </tr>
+    <tr>
+    <td style="background-color:#1f262e">SAT</td>
+	 <td style="background-color:#4c5457">-</td>
+    <td style="background-color:#4c5457">-</td>
+    <td style="background-color:#4c5457">-</td>
+    </tr>
+    </TBODY>
+    </table>
+    
+<table style="width:100%">
+<th style="background-color:#364549"><span style="font-family:default; font-size:default; color:default">Quotes of the Week:</span></th>
+</table>
+
+╒◖══════════════════════════════════◗╕
+
+╘◖══════════════════════════════════◗╛
+
+--- column-end ---
+
+#### <span style="font-family:default;font-size:default"><u> DID I ACCOMPLISH ALL THAT I SET OUT TO LAST WEEK?:</u></span>
+- 
+
+#### <span style="font-family:default;font-size:default"><u> IF NOT THEN WHY? AND HOW WILL I IMPROVE THIS WEEK?:</u></span>
+- 
+
+#### <span style="font-family:default;font-size:default"><u> WHT DO I WANT TO ACCOMPLISH THIS WEEK?:</u></span>
+- 
+---
+
+--- column-end ---
+
+╔.***⮮***.══════════════════════╗
+
+```todoist
+{
+"name": "Overdue tasks",
+"filter": "today | overdue"
+} 
+```
+
+╚══════════════════════.***⮭***.╝
+
+=== end-multi-column
+
+---
