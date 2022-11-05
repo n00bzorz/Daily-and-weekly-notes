@@ -1,0 +1,119 @@
+---
+cssclass: 
+creation date: 2022-11-01 09:47
+tags:
+- 
+---
+
+<center> [[<% tp.date. now ("MMMM Do YYYY, dddd",-1,"{{title}}","MMMM Do YYYY, dddd") %>]] | [[<% tp.date. now ("MMMM Do YYYY, dddd",1,"{{title}}","MMMM Do YYYY, dddd") %>]] </center>
+---
+
+
+```start-multi-column
+ID: ID_g6fc9
+Number of Columns: 2
+largest column: left
+border: false
+shadow: false 
+```
+
+```ad-quote
+title: Quote of the day:
+
+<% tp.web.daily_quote() %>
+
+```
+
+--- column-end ---
+<br>
+<br>
+<table style="float:center;width:368px;MARGIN-TOP:25">
+<thead>
+<tr>
+<th colspan=8 style=background-color:#3e3d3d><span style="font-family:default;font-size:default;color:default">Daily Schedule</span></th>
+</tr>
+</thead>
+<tr>
+<td><span style=font-family:default;font-size:default;color:default><b>DOTW</b></span></td>
+<td><span style=font-family:default;font-size:default;color:default>Work<br>START</span></td>
+<td><span style=font-family:default;font-size:default;color:default>Lunch</span></td>
+<td><span style=font-family:default;font-size:default;color:default>Work<br>END</span></td>
+</tr>
+<tr>
+<td style=background-color:#1f262e>-</td>
+<td style=background-color:#4c5457>-</td>
+<td style=background-color:#4c5457>-</td>
+<td style=background-color:#4c5457>-</td>
+</tr>
+</table>
+
+=== end-multi-column
+
+---
+
+```start-multi-column
+ID: ID_7fc8
+Number of Columns: 2
+largest column: left
+```
+
+ <span style="font-family:default;font-size:default;color:default"><u>**Morning notes:**</u></span>
+####
+#### <span>What main project do I want done today?</span>
+- 
+####
+#### <span>What can I do today that will help me feel more in control of my life?</u></span>
+- 
+####
+#### <span>something that makes me feel happy about today.</span>
+- 
+####
+#### <span>Where do I need to take a new action this morning?</span>
+- 
+
+ <span style="font-family:default;font-size:default;color:default"><u>**End of day notes:**</u></span>
+####
+#### <span>What was I able to achieve today?</span>
+- 
+####
+#### <span>What did I do TODAY that I'm proud of?:</span>
+- 
+####
+#### <span>What could I have done better?:</span>
+- 
+####
+#### <span>How will I improve TOMORROW?:</span>
+- 
+
+
+ <span style="font-family:default;font-size:default;color:default"><u>Brain Dump/Scratch Pad</u></span>
+ - 
+
+
+
+--- column-end ---
+
+#### <span style="font-family:default;font-size:default;color:default"><u>**Todays To-Do**</u></span>
+╔.***⮮***.═══════════════════════════════════╗ <br>
+
+```todoist
+{
+"name": "Todays tasks",
+"filter": "today"
+}
+```
+╚═══════════════════════════════════.***⮭***.╝
+╔.***⮮***.═══════════════════════════════════╗
+
+```todoist
+{
+"name": "Overdue tasks",
+"filter": "overdue"
+} 
+```
+
+╚═══════════════════════════════════.***⮭***.╝
+
+ {=  #TASKS =}
+ 
+=== end-multi-column
