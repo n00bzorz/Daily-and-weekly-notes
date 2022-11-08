@@ -5,7 +5,6 @@
 - Banners
 - Calendar
 - Dataview
-- Homepage
 - Multi-Column Markdown
 - Periodic Notes
 - Templater
