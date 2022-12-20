@@ -17,6 +17,8 @@
 ## V1.1 - New And Improved! (Now with less width!)
 ![Daily1 1](https://user-images.githubusercontent.com/117250339/208698224-d75d0aee-5437-485b-96a2-cb0a34a12cfa.png)
 
+(WEEKLY LOG V1.1 COMING SOON)
+
 
 
 
