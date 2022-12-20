@@ -1,0 +1,208 @@
+---
+cssclass:
+tags: daily
+cleaning: 
+#CleaningInfo: can leave it blank or put a 1 - this tells the dataview table to mark the calendar as a day you cleaned - or w/e you want to change it to.
+weight: 
+#WeightInfo: Just put it in and the Dataview table should track that number as lbs
+spent:
+  - {name: Example purchase, value: 420.69}
+#SpentInfo: When entering in purchases above DO NOT TAB INDENT - must use 2 spaces only (can delete this field)
+mood: 
+#MoodInfo: 1-9 depending on your mood the color ranges from a dark red to a dark green to indicate mood (will update in the future more colors for different moods like - Happy, Depressed, Excited, Busy etc.)
+---
+
+<img src=" " alt="" width="" height=""> %% Include an image here as i did in, or use banner plugin to get one on the top of the page %%
+
+```start-multi-column
+ID: ID_7fc8hhgh
+Number of Columns: 2
+largest column: right
+```
+### <span style="font-family:cubixcode; font-size:40; color:#ffc800; font-weight: normal">TODAYS TASKS</span>
+```todoist
+{
+"name": "",
+"filter": "today"
+}
+```
+### <span style="font-family:cubixcode; font-size:40; color:#ffc800; font-weight: normal">OVERDUE</span>
+```todoist
+{
+"name": "",
+"filter": "overdue"
+} 
+```
+--- column-end ---
+<h3>CASH LOGS</h3>
+
+```dataviewjs
+// defining the query for current day
+const DQL = await dv.tryQuery(`
+TABLE WITHOUT ID S.name, S.value
+WHERE file.path = this.file.path
+FLATTEN spent AS S
+`)
+
+// Total title 1
+const totalTitle = ["<span style='display:flex;justify-content:right'><b>Total Spent</b></span>"]
+
+// calculate today total
+const spentToday = DQL.values.map(g => g[1]).reduce((acc, val) => acc + val, 0).toFixed(2);
+
+
+// Total today
+const totalToday = ["<span style='display:flex;justify-content:right'>Today</span>", "$ " + spentToday]
+
+// calculate costs in the current week until today
+const DQLWeek = await dv.tryQuery(`
+TABLE WITHOUT ID round(sum(rows.val),2)
+WHERE spent
+WHERE dateformat(file.day, "yyyy-WW") = dateformat(this.file.day, "yyyy-WW") AND file.day <= this.file.day
+FLATTEN spent.value AS val
+GROUP BY true
+`)
+
+// Total week
+const totalWeek = ["<span style='display:flex;justify-content:right'>This week</span>", "$ " + (DQLWeek.values[0] || "0.00")];
+
+// calculate costs in the current month
+const DQLMonth = await dv.tryQuery(`
+TABLE WITHOUT ID round(sum(rows.val),2)
+WHERE spent
+WHERE dateformat(file.day, "yyyy-MM") = dateformat(this.file.day, "yyyy-MM") AND file.day <= this.file.day
+FLATTEN spent.value AS val
+GROUP BY true
+`)
+
+// Total month
+const totalMonth = ["<span style='display:flex;justify-content:right'>This month</span>", "$ " + (DQLMonth.values[0] || "0.00")]
+
+// calculate costs in the current year
+const DQLYear = await dv.tryQuery(`
+TABLE WITHOUT ID round(sum(rows.val),2)
+WHERE spent
+WHERE file.day.year = this.file.day.year AND file.day <= this.file.day
+FLATTEN spent.value AS val
+GROUP BY true
+`)
+
+// Total year
+const totalYear = ["<span style='display:flex;justify-content:right'>This year</span>", "$ " + (DQLYear.values[0] || "0.00")]
+
+
+// define a horizontal line in table
+const hrArray = Array(2).fill('<hr style="padding:0; margin:0 -10px; border-top: 1px solid var(--background-modifier-border)">');
+
+// push all values
+DQL.values.push(hrArray)
+DQL.values.push(totalTitle)
+DQL.values.push(hrArray)
+DQL.values.push(totalToday)
+DQL.values.push(hrArray)
+DQL.values.push(totalWeek)
+DQL.values.push(hrArray)
+DQL.values.push(totalMonth)
+DQL.values.push(hrArray)
+DQL.values.push(totalYear)
+DQL.values.push(hrArray)
+
+// create table
+dv.table(["Purchased", "Cost"], DQL.values);
+
+// remove the number of rows in first column title
+this.container.querySelectorAll(".table-view-table tr:first-of-type th:first-of-type > span.small-text")[0].style.visibility = "hidden";
+```
+```dataviewjs
+dv.span("<h2>A Year In Pixels</h2>")
+dv.span("---")
+const hue1 = 13 //red
+const hue2 = 132 //green
+const calendarData = { 
+    year: 2022,
+    intensityScaleStart: 1,
+    intensityScaleEnd: 9,
+    colors: {   // optional, defaults to green
+        red2greenX21: [
+            `hsl(${hue1}, 100%, 37%)`,     // 1 - darkest red (worst mood)
+            `hsl(${hue1}, 100%, 50%)`,     // 2 - 
+            `hsl(${hue1}, 100%, 60%)`,     // 3 - 
+            `hsl(${hue1}, 100%, 77%)`,     // 4 - lightest red
+            `hsl(0, 0%, 80%)`,             // 5 - gray (neutral mood)
+            `hsl(${hue2}, 59%, 24%)`,      // 6 - lightest green
+            `hsl(${hue2}, 49%, 36%)`,      // 7 - 
+            `hsl(${hue2*0.85}, 43%, 56%)`, // 8 - 
+            `hsl(${hue2*0.7}, 70%, 72%)`,  // 9 - darkest green (best mood)
+        ],
+    },
+    entries: [] // populated in the DataviewJS loop below
+}
+for(let page of dv.pages('"1. Notes/dailyNotes"').where(p=>p.mood)){ 
+    calendarData.entries.push({
+        date: page.file.name, 
+        intensity: page.mood,
+        content: await dv.span(`[](${page.file.name})`), //for hover preview
+    })
+}
+renderHeatmapCalendar(this.container, calendarData)
+dv.span("<br>")
+```
+
+=== end-multi-column---
+
+```start-multi-column
+ID: ID_7fc8
+Number of Columns: 2
+largest column: left
+```
+# Morning Notes
+
+#### Whats happening today?
+- 
+  
+#### What can I do today to help me feel more in control in life?
+- 
+  
+#### something that makes me feel happy about today.
+- 
+  
+#### Where do I need to take a new action this morning?
+- 
+  
+# E.O.D.  Notes
+
+#### What was I able to achieve today?
+- 
+
+#### What did I do TODAY that I'm proud of?
+- 
+  
+#### What could I have done better?
+- 
+  
+#### How will I improve TOMORROW?
+- 
+  
+--- column-end ---
+
+{{qotd}}
+
+```tracker
+searchType: frontmatter
+searchTarget: cleaning
+folder: 1. Notes/dailyNotes
+datasetName: Cleaning
+fixedScale: 1.3
+month:
+	color: orange
+```
+```tracker
+searchType: frontmatter
+searchTarget: weight
+folder: 1. Notes/dailyNotes
+fixedScale: 1.1
+line:
+	title: Weight Tracker
+	yAxisLabel: Weight
+```
+=== end-multi-column
