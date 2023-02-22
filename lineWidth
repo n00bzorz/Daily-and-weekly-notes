@@ -1,0 +1,27 @@
+/* These are used in my notes for the cssclass */
+markdown-preview-section  {
+  --file-line-width: 1300px !important;
+}
+.wide {
+  --file-line-width: 1600px !important;
+}
+
+.full {
+  --file-line-width: 100% !important;
+}
+
+.notes {
+  --file-line-width: 1000px !important;
+}
+
+.booknotes {
+  --file-line-width: 1200px !important;
+}
+
+
+/* I use this to change the location of my "banner" on the page */
+
+.bottom {
+  margin:  0px 0px 0px 0px;
+  width: 100%;                                               
+}
