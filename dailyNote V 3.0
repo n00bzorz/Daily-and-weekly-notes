@@ -1,0 +1,336 @@
+---
+cssclass: wide
+creation date: 2023-02-17
+tags: daily
+income:
+  - {name: , value: 0.00}
+spent:
+  - {name: , value: 0.00}
+investment: 
+  - {name: , value: 0.00}
+cashLog: 
+incomeLog: 
+investments: 
+Chase:  
+LiLi: 
+Acorns: 
+wellbeingmorning:
+  mood: 
+  mood-notes: 
+  motivation: 
+  motivation-notes: 
+  health: 
+  health-notes: 
+  pain: 
+  pain-type: 
+cleaning: 
+weight: 268
+---
+
+*%% BANNER %%*
+<center><div class="bottom"><img src="https://i.ibb.co/WnWtCMp/78984968498.png" style="margin:0px -1000px"></div></center>
+
+```start-multi-column
+ID: TOP2023-02-022qwqw
+Number of Columns: 3
+largest column: center
+width: 100%
+border: false
+shadow: false
+```
+
+#### <p style="text-align:right">Spending</p>
+>```dataviewjs
+const DQL = await dv.tryQuery(`
+TABLE WITHOUT ID S.name, S.value
+WHERE file.path = this.file.path
+FLATTEN spent AS S
+`)
+// Total title 1
+const totalTitle = ["<span style='display:flex;justify-content:right'><b>Total Spent</b></span>"]
+// calculate today total
+const spentToday = DQL.values.map(g => g[1]).reduce((acc, val) => acc + val, 0).toFixed(2);
+// Total today
+const totalToday = ["<span style='display:flex;justify-content:right'>**Today**</span>", "$ " + spentToday]
+// calculate costs in the current week until today
+const DQLWeek = await dv.tryQuery(`
+TABLE WITHOUT ID round(sum(rows.val),2)
+WHERE spent
+WHERE dateformat(file.day, "yyyy-WW") = dateformat(this.file.day, "yyyy-WW") AND file.day <= this.file.day
+FLATTEN spent.value AS val
+GROUP BY true
+`)
+// Total week
+const totalWeek = ["<span style='display:flex;justify-content:right'>**This week**</span>", "$ " + (DQLWeek.values[0] || "0.00")];
+// calculate costs in the current month
+const DQLMonth = await dv.tryQuery(`
+TABLE WITHOUT ID round(sum(rows.val),2)
+WHERE spent
+WHERE dateformat(file.day, "yyyy-MM") = dateformat(this.file.day, "yyyy-MM") AND file.day <= this.file.day
+FLATTEN spent.value AS val
+GROUP BY true
+`)
+// Total month
+const totalMonth = ["<span style='display:flex;justify-content:right'>**This month**</span>", "$ " + (DQLMonth.values[0] || "0.00")]
+// calculate costs in the current year
+const DQLYear = await dv.tryQuery(`
+TABLE WITHOUT ID round(sum(rows.val),2)
+WHERE spent
+WHERE file.day.year = this.file.day.year AND file.day <= this.file.day
+FLATTEN spent.value AS val
+GROUP BY true
+`)
+// Total year
+const totalYear = ["<span style='display:flex;justify-content:right'>**This year**</span>", "$ " + (DQLYear.values[0] || "0.00")]
+// define a horizontal line in table
+const hrArray = Array(2).fill('<hr style="padding:0; margin:0 -10px; border-top: 1px solid var(--background-modifier-border)">');
+// push all values
+DQL.values.push(hrArray)
+DQL.values.push(totalTitle)
+DQL.values.push(hrArray)
+DQL.values.push(totalToday)
+DQL.values.push(hrArray)
+DQL.values.push(totalWeek)
+DQL.values.push(hrArray)
+DQL.values.push(totalMonth)
+DQL.values.push(hrArray)
+DQL.values.push(totalYear)
+DQL.values.push(hrArray)
+// create table
+dv.table(["Purchased", "Cost"], DQL.values);
+// remove the number of rows in first column title
+this.container.querySelectorAll(".table-view-table tr:first-of-type th:first-of-type > span.small-text")[0].style.visibility = "hidden";
+>```
+
+--- column-end ---
+#### <p style="text-align:center">A Year In Pixels</p>
+>```dataviewjs
+>width: 100%
+>dv.span("")
+>const hue1 = 13 //red
+>const hue2 = 132 //green
+>const calendarData = { 
+    >intensityScaleStart: 1,
+    >intensityScaleEnd: 10,
+    >colors: {   // optional, defaults to green
+        >red2greenX21: [
+            >`hsl(${hue1}, 100%, 37%)`,
+            >`hsl(${hue1}, 100%, 50%)`,
+            >`hsl(${hue1}, 100%, 60%)`,
+            >`hsl(${hue1}, 100%, 77%)`,
+            >`hsl(0, 0%, 80%)`,
+            >`hsl(${hue2}, 59%, 24%)`,
+            >`hsl(${hue2}, 49%, 36%)`,
+            >`hsl(${hue2*0.85}, 43%, 56%)`,
+            >`hsl(${hue2*0.7}, 70%, 72%)`,
+            >`hsl(${hue2*0.7}, 80%, 82%)`,           
+        >],
+    >},
+    >entries: [] // populated in the DataviewJS loop below
+>}
+>for(let page of dv.pages('"----3. ARCHIVES/00. dailyNotes"').where(p=>p.wellbeing?.mood)){ 
+    >calendarData.entries.push({
+        >date: page.file.name, 
+        >intensity: page.wellbeingmorning.mood,
+        >content: await dv.span(`[](${page.file.name})`), //for hover preview
+    >})
+>}
+>renderHeatmapCalendar(this.container, calendarData)
+>```
+
+
+# &nbsp;<% tp.date.now("Do of MMMM Y") %>
+# &nbsp;**<< [[<% tp.date.now("YY-MM-DD", -1) %>]] | [[<% tp.date.now("YY-MM-DD", 1) %>]] >>** 
+
+
+  
+
+--- column-end ---
+#### <p style="text-align:left">Income</p>
+>```dataviewjs
+const DQL = await dv.tryQuery(`
+TABLE WITHOUT ID S.name, S.value
+WHERE file.path = this.file.path
+FLATTEN income AS S
+`)
+const totalTitle = ["<span style='display:flex;justify-content:right'><b>Total Income</b></span>"]
+const earnedToday = DQL.values.map(g => g[1]).reduce((acc, val) => acc + val, 0).toFixed(2);
+const totalToday = ["<span style='display:flex;justify-content:right'>**Today**</span>", "$ " + earnedToday]
+const DQLWeek = await dv.tryQuery(`
+TABLE WITHOUT ID round(sum(rows.val),2)
+WHERE income
+WHERE dateformat(file.day, "yyyy-WW") = dateformat(this.file.day, "yyyy-WW") AND file.day <= this.file.day
+FLATTEN income.value AS val
+GROUP BY true
+`)
+const totalWeek = ["<span style='display:flex;justify-content:right'>**This week**</span>", "$ " + (DQLWeek.values[0] || "0.00")];
+const DQLMonth = await dv.tryQuery(`
+TABLE WITHOUT ID round(sum(rows.val),2)
+WHERE income
+WHERE dateformat(file.day, "yyyy-MM") = dateformat(this.file.day, "yyyy-MM") AND file.day <= this.file.day
+FLATTEN income.value AS val
+GROUP BY true
+`)
+const totalMonth = ["<span style='display:flex;justify-content:right'>**This month**</span>", "$ " + (DQLMonth.values[0] || "0.00")]
+const DQLYear = await dv.tryQuery(`
+TABLE WITHOUT ID round(sum(rows.val),2)
+WHERE income
+WHERE file.day.year = this.file.day.year AND file.day <= this.file.day
+FLATTEN income.value AS val
+GROUP BY true
+`)
+const totalYear = ["<span style='display:flex;justify-content:right'>**This year**</span>", "$ " + (DQLYear.values[0] || "0.00")]
+const hrArray = Array(2).fill('<hr style="padding:0; margin:0 -10px; border-top: 1px solid var(--background-modifier-border)">');
+DQL.values.push(hrArray)
+DQL.values.push(totalTitle)
+DQL.values.push(hrArray)
+DQL.values.push(totalToday)
+DQL.values.push(hrArray)
+DQL.values.push(totalWeek)
+DQL.values.push(hrArray)
+DQL.values.push(totalMonth)
+DQL.values.push(hrArray)
+DQL.values.push(totalYear)
+DQL.values.push(hrArray)
+dv.table(["Income", "Ammount"], DQL.values);
+this.container.querySelectorAll(".table-view-table tr:first-of-type th:first-of-type > span.small-text")[0].style.visibility = "hidden";
+>```
+
+=== end-multi-column
+
+{{qotd}}
+
+```start-multi-column
+ID: MID2023-02-02
+Number of Columns: 2
+largest column: right
+```
+
+# <span class="arrow" style="font-family:cubixcode; font-weight: normal"> > Tasks</span><span class="dash"> _</span>
+
+##### <span class="arrow" style="font-family:white rabbit;font-weight: normal;font-size:16">> Todays Tasks</span>
+
+- 
+
+
+##### <span class="arrow" style="font-family:white rabbit;font-weight: normal;font-size:16">> Overdue</span>
+```tasks
+not done
+due before today
+limit 100
+sort by due reverse
+hide backlink
+hide start date
+hide due date
+hide done date
+hide priority
+hide urgency
+hide start date
+hide scheduled date
+ ```
+
+##### <span class="arrow" style="font-family:white rabbit;font-weight: normal;font-size:16">> No Due Date</span>
+```tasks
+not done
+no due date
+limit 100
+sort by due reverse
+sort by description
+hide backlink
+hide start date
+hide due date
+hide done date
+hide priority
+hide urgency
+hide start date
+hide scheduled date
+``` 
+ 
+ 
+--- column-end ---
+
+# <span class="arrow" style="font-family:cubixcode; font-weight: normal"> > NOTES</span><span class="dash"> _</span>
+
+### Scratchpad
+- 
+  
+---
+
+## Morning Notes
+
+
+> [!col]
+>>```button
+name PROMPT ONE
+type command
+action QuickAdd: getDone
+color default
+ >> ```
+ >> ^button-getDone
+>
+>>```button
+name PROMPT TWO
+type command
+action QuickAdd: makeHappy
+ >> ``` 
+ >> ^button-makeHappy
+>
+>>```button
+name PROMPT THREE
+type command
+action QuickAdd: Take Action
+ >> ``` 
+ >> ^button-TakeAction
+
+#### WHAT DO I WANT DONE TODAY? 
+<br>
+
+  
+#### something that makes me feel happy about today. 
+<br>
+
+  
+#### Where do I need to take a new action this morning? 
+<br>
+
+
+## E.O.D.  Notes
+
+ > [!col]
+>>```button
+name PROMPT FOUR
+type command
+action QuickAdd: Proud
+ >> ``` 
+ >> ^button-Proud
+ >
+>>```button
+name PROMPT FIVE
+type command
+action QuickAdd: doBetter
+ >> ``` 
+ >> ^button-DoBetter
+ >
+>>```button
+name PROMPT SIX
+type command
+action QuickAdd: improveTomorrow
+ >> ``` 
+ >> ^button-Improve
+
+
+#### What did I do TODAY that I'm proud of? 
+<br>
+
+#### What could I have done better? 
+<br>
+
+
+#### How will I improve TOMORROW? 
+<br>
+
+=== end-multi-column---
+
+
+<br>
+
