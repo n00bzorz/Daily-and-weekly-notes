@@ -35,8 +35,9 @@ we have a dataviewJS querie that uses information pulled from the YAML to keep t
   - {name: Coffee- 7/11, value: 4.20} <br>
   - {name: Rent - March, value: 600.00} <br>
 
-![image](https://user-images.githubusercontent.com/117250339/220946110-e1b697cb-868e-4949-8eea-f26872caefbc.png)
-![image](https://user-images.githubusercontent.com/117250339/220946151-9419ffe0-9a43-4877-aa59-84dd62eb67d7.png)<br>
+![image](https://user-images.githubusercontent.com/117250339/220946110-e1b697cb-868e-4949-8eea-f26872caefbc.png) <br>
+![image](https://user-images.githubusercontent.com/117250339/220957826-c7ab714d-2de1-4583-9f2b-7d0c9f3033cb.png) <br>
+<br>
 
 Then we have the "year in pixels" and for this all you really need to fill in is the mood in the "Wellbeing" section of the YAML. i have more plans for the rest of it but ATM this is all i got.
 
