@@ -11,8 +11,8 @@ Plug in maybe confusing it.
 - [twentytwokhz/quote-of-the-day](https://github.com/twentytwokhz/quote-of-the-day)
 - [liamcain/obsidian-periodic-notes](https://github.com/liamcain/obsidian-periodic-notes)
 - [SilentVoid13/Templater](https://github.com/SilentVoid13/Templater)
-- [QuickAdd](https://github.com/chhoumann/quickadd)
-- [Buttons](https://github.com/shabegom/buttons)
+- [chhoumann/quickadd](https://github.com/chhoumann/quickadd)
+- [shabegom/buttons](https://github.com/shabegom/buttons)
 
 ## Retired Plugins (for me atleast)
 - admonition
@@ -47,10 +47,10 @@ You can put in your own color codes and your own scale for the input here.
 
 then we have some simple next and previous day - the Quote of the day - some simple queries to pull to-dos and in the main section this requires Quick Add and Buttons PLugins<br>
 
-QuickAdd settings: 
-![image](https://user-images.githubusercontent.com/117250339/220948574-afeb2e39-7a54-48bf-b7f8-6cfa5397880a.png)
-Button settings:
-![image](https://user-images.githubusercontent.com/117250339/220949430-39cae146-79e1-40bd-81f4-4f3b398749bd.png)
+QuickAdd settings: <br>
+![image](https://user-images.githubusercontent.com/117250339/220948574-afeb2e39-7a54-48bf-b7f8-6cfa5397880a.png) <br>
+Button settings: <br>
+![image](https://user-images.githubusercontent.com/117250339/220949430-39cae146-79e1-40bd-81f4-4f3b398749bd.png) <br>
 
 
 
