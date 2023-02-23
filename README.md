@@ -42,7 +42,8 @@ we have a dataviewJS querie that uses information pulled from the YAML to keep t
 Then we have the "year in pixels" and for this all you really need to fill in is the mood in the "Wellbeing" section of the YAML. i have more plans for the rest of it but ATM this is all i got.
 
 ![image](https://user-images.githubusercontent.com/117250339/220946504-50bb37d9-88aa-424e-8b3b-8a3c95a35b52.png)
-![image](https://user-images.githubusercontent.com/117250339/220946630-6e9baff3-f994-4b35-be9a-5a7b64dd7799.png) <br>
+![image](https://user-images.githubusercontent.com/117250339/220958189-7e01b3a8-bfb2-498d-b919-3b90ff600a55.png)
+ <br>
 You can put in your own color codes and your own scale for the input here.
 
 
