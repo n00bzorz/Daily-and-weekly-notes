@@ -1,0 +1,66 @@
+h1 { color: #2456a1 !important; }  
+h2 { color: #1eddff !important; }
+h3 { color: #a6ff00 !important; }
+h4 { color: #FFCE00 !important; }
+h5 { color: #797979 !important; }
+h6 { color: #ffffff !important; }
+
+
+@-webkit-keyframes blink {
+  to {
+      opacity: 0.0;
+  }
+}
+
+@-moz-keyframes blink {
+  to {
+      opacity: 0.0;
+  }
+}
+
+@-ms-keyframes blink {
+  to {
+      opacity: 0.0;
+  }
+}
+
+@-o-keyframes blink {
+  to {
+      opacity: 0.0;
+  }
+}
+@keyframes blink {
+  to {
+      opacity: 0.0;
+  }
+}
+.arrow {
+  font: italic bold 60px Georgia, serif;
+  color: white;
+  text-shadow: 0px 0px 10px #39FF14, 0px 0px 10px #39FF14;
+}
+
+.dash {
+  font: 40px Georgia, serif;
+  color: white;
+  text-shadow: 0px 0px 10px #39FF14, 0px 0px 10px #39FF14, 0px 0px 10px #39FF14;
+  -webkit-animation-name: blink;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  
+  -moz-animation-name: blink;
+  -moz-animation-duration: 1s;
+  -moz-animation-iteration-count: infinite;
+  
+  -ms-animation-name: blink;
+  -ms-animation-duration: 1s;
+  -ms-animation-iteration-count: infinite;
+  
+  -o-animation-name: blink;
+  -o-animation-duration: 1s;
+  -o-animation-iteration-count: infinite;
+  
+   animation-name: blink;
+   animation-duration: 1s;
+   animation-iteration-count: infinite;
+}
