@@ -28,12 +28,12 @@ THEME: PLN
 starting from the top:
 we have a dataviewJS querie that uses information pulled from the YAML to keep track of spending and income with another spot for investing if you feel like messing with the querie a bit. Just make sure you keep the inputs using the blank spots i put in. like so:
 
-income:
-  - {name: Paycheck, value: 420.69}
-  - {name: eBay payout, value: 101.42}
-spent:
-  - {name: Coffee- 7/11, value: 4.20}
-  - {name: Rent - March, value: 600.00}
+income:<br>
+  - {name: Paycheck, value: 420.69} <br>
+  - {name: eBay payout, value: 101.42} <br>
+spent:<br>
+  - {name: Coffee- 7/11, value: 4.20} <br>
+  - {name: Rent - March, value: 600.00} <br>
 
 ![image](https://user-images.githubusercontent.com/117250339/220946110-e1b697cb-868e-4949-8eea-f26872caefbc.png)
 ![image](https://user-images.githubusercontent.com/117250339/220946151-9419ffe0-9a43-4877-aa59-84dd62eb67d7.png)<br>
