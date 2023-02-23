@@ -3,13 +3,14 @@
 ### Plugins needed to duplicate my set up:
 
 Plug in maybe confusing it.
-- Multi-Column Markdown
-- Calendar
-- Dataview
-- Heatmap Calendar
-- Quote of the Day
-- Periodic Notes
-- Templater
+- [mulfok/obsidian-absolve](https://github.com/mulfok/obsidian-absolve)
+- [ckRobinson/ulti-Column Markdown](https://github.com/ckRobinson/multi-column-markdown)
+- [liamcain/obsidian-calendar-plugin](https://github.com/liamcain/obsidian-calendar-plugin)
+- [blacksmithgu/obsidian-dataview](https://github.com/blacksmithgu/obsidian-dataview)
+- [Richardsl/heatmap-calendar-obsidian](https://github.com/Richardsl/heatmap-calendar-obsidian)
+- [twentytwokhz/quote-of-the-day](https://github.com/twentytwokhz/quote-of-the-day)
+- [liamcain/obsidian-periodic-notes](https://github.com/liamcain/obsidian-periodic-notes)
+- [SilentVoid13/Templater](https://github.com/SilentVoid13/Templater)
 
 ## Retired Plugins (for me atleast)
 - admonition
