@@ -2,7 +2,7 @@
 
 ### Plugins needed to duplicate my set up:
 
-Plug in maybe confusing it.
+Plugins used:
 - [mulfok/obsidian-absolve](https://github.com/mulfok/obsidian-absolve)
 - [ckRobinson/ulti-Column Markdown](https://github.com/ckRobinson/multi-column-markdown)
 - [liamcain/obsidian-calendar-plugin](https://github.com/liamcain/obsidian-calendar-plugin)
