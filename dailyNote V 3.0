@@ -131,7 +131,7 @@ this.container.querySelectorAll(".table-view-table tr:first-of-type th:first-of-
 >for(let page of dv.pages('"----3. ARCHIVES/00. dailyNotes"').where(p=>p.wellbeing?.mood)){ 
     >calendarData.entries.push({
         >date: page.file.name, 
-        >intensity: page.wellbeingmorning.mood,
+        >intensity: page.wellbeing.mood,
         >content: await dv.span(`[](${page.file.name})`), //for hover preview
     >})
 >}
